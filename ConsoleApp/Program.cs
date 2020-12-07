@@ -11,15 +11,37 @@ namespace ConsoleApp
 	{
 		static void Main(string[] args)
 		{
-			Order[] orders = OrderService.ProcessOrders();
+			IOrderAdapter adapter = new JsonOrderAdapter();
+
+			Order[] orders = new OrderService(adapter).ProcessOrders();
 		}
+	}
+
+	internal class JsonOrderAdapter : IOrderAdapter
+	{
+		public Order[] GetOrders()
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	public interface IOrderAdapter
+	{
+		Order[] GetOrders();
 	}
 
 	public class OrderService
 	{
-		public static Order[] ProcessOrders()
+		private readonly IOrderAdapter adapter;
+
+		public OrderService(IOrderAdapter adapter)
 		{
-			throw new NotImplementedException();
+			this.adapter = adapter;
+		}
+
+		public Order[] ProcessOrders()
+		{
+			return adapter.GetOrders();
 		}
 	}
 
