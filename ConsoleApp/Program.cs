@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,12 @@ namespace ConsoleApp
 	{
 		public UpStreamOrder[] GetOrder()
 		{
-			throw new NotImplementedException();
+			string json = @"[
+	{""Code"":200,""Orders"":[{""FruitName"":""xxx花東產西瓜xxx""}]},
+			{ ""Code"":200,""Orders"":[{ ""3CName"":""蘋果""}]}
+			]";
+
+			return JsonConvert.DeserializeObject<UpStreamOrder[]>(json);
 		}
 	}
 
@@ -39,10 +45,42 @@ namespace ConsoleApp
 		}
 		public Order[] GetOrders()
 		{
-			// UpStreamOrder[] orders = facade.GetOrder();
-			throw new NotImplementedException();
+			UpStreamOrder[] orders = facade.GetOrder();
+			return orders.Select(upOrder => new Order
+			{
+				Code = upOrder.Code, 
+				Items = upOrder.Items.Select(upItem=>OrderItemFactory.GetObject(upItem)).ToArray()
+			}).ToArray();
 		}
 	}
+
+	public class OrderItemFactory
+	{
+		public static OrderItem GetObject(UpStreamOrderItem upItem)
+		{
+			if(!string.IsNullOrEmpty(upItem.FruitName))
+				return new FruitOrderItem(upItem);
+			else
+			{
+				return new TechProductOrderItem(upItem);
+			}
+		}
+	}
+
+	public class FruitOrderItem:OrderItem{
+		public FruitOrderItem(UpStreamOrderItem upItem)
+		{
+			this.ProductName = upItem.FruitName;
+		}
+	}
+	public class TechProductOrderItem:OrderItem
+	{
+		public TechProductOrderItem(UpStreamOrderItem upItem)
+		{
+			this.ProductName = upItem.TechProductName;
+		}
+	}
+
 
 	public class UpStreamOrder
 	{
@@ -85,10 +123,10 @@ namespace ConsoleApp
 	public class Order
 	{
 		public int Code;
-		public OrderItems[] Items { get; set; }
+		public OrderItem[] Items { get; set; }
 	}
 
-	public class OrderItems
+	public class OrderItem
 	{
 		public string ProductName { get; set; }
 	}
