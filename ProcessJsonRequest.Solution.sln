@@ -3,9 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10正式桯式", "10正式桯式", "{6F5264DF-5A23-462A-9FB8-7BFBF9B8070E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{B2448B80-AF0E-4392-98F0-C8F14DFF1523}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2448B80-AF0E-4392-98F0-C8F14DFF1523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2448B80-AF0E-4392-98F0-C8F14DFF1523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2448B80-AF0E-4392-98F0-C8F14DFF1523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2448B80-AF0E-4392-98F0-C8F14DFF1523}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2448B80-AF0E-4392-98F0-C8F14DFF1523} = {6F5264DF-5A23-462A-9FB8-7BFBF9B8070E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F259A86A-5A6B-4485-9678-C6BBBB1ED7CC}
