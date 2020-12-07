@@ -57,12 +57,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TechProductOrderItem.cs" />
-    <Compile Include="UpStreamOrder.cs" />
-    <Compile Include="UpStreamOrderItem.cs" />
+    <Compile Include="UpStreamModels\UpStreamOrder.cs" />
+    <Compile Include="UpStreamModels\UpStreamOrderItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

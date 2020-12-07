@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ConsoleApp
+namespace ConsoleApp.UpStreamModels
 {
 	[JsonObject("UpStreamOrderItem")]
 	public class UpStreamOrderItem

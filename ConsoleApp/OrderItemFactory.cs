@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp
+﻿using ConsoleApp.UpStreamModels;
+
+namespace ConsoleApp
 {
 	public class OrderItemFactory
 	{

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ConsoleApp.UpStreamModels;
+using Newtonsoft.Json;
 
 namespace ConsoleApp
 {
