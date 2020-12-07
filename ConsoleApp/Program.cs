@@ -17,6 +17,7 @@ namespace ConsoleApp
 		static void Main(string[] args)
 		{
 			FacadeUpStreamOrder facade = new FacadeUpStreamOrder();
+			// var facade = new FacadeUpStreamTypedOrder();
 
 			IOrderAdapter adapter = new JsonOrderAdapter(facade);
 
