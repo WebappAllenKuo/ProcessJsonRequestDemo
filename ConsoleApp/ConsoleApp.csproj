@@ -46,8 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FacadeUpStreamOrder.cs" />
+    <Compile Include="FruitOrderItem.cs" />
+    <Compile Include="IOrderAdapter.cs" />
+    <Compile Include="JsonOrderAdapter.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderItem.cs" />
+    <Compile Include="OrderItemFactory.cs" />
+    <Compile Include="OrderService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TechProductOrderItem.cs" />
+    <Compile Include="UpStreamOrder.cs" />
+    <Compile Include="UpStreamOrderItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
