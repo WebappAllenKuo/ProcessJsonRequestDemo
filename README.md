@@ -9,3 +9,7 @@
 1. 寫一個Facade object取得上述Json,並轉型為屬性具備 FruitName, 3CName 的UpStreamOrderItem objet
 2. 在 Adapter object裡使用 Simple Factory , 將 UpStreamOrderItem 轉型為 OrderItem
 3. 寫支 OrderService 叫用 Adapter object 取得本程式需要的強型別物件
+
+解析結果:
+
+![](Assets/result.png)
