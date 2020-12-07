@@ -16,12 +16,17 @@ namespace ConsoleApp
 	{
 		static void Main(string[] args)
 		{
-			FacadeUpStreamOrder facade = new FacadeUpStreamOrder();
-			// var facade = new FacadeUpStreamTypedOrder();
+			// FacadeUpStreamOrder facade = new FacadeUpStreamOrder();
 
-			IOrderAdapter adapter = new JsonOrderAdapter(facade);
+			// IOrderAdapter adapter = new JsonOrderAdapter(facade);
 
-			Order[] orders = new OrderService(adapter).ProcessOrders();
+			// Order[] orders = new OrderService(adapter).ProcessOrders();
+
+			var facade = new FacadeUpStreamTypedOrder();
+			
+			ITypedOrderAdapter adapter = new JsonTypedOrderAdapter(facade);
+
+			TypedOrder[] orders = new TypedOrderService(adapter).ProcessOrders();
 		}
 	}
 }

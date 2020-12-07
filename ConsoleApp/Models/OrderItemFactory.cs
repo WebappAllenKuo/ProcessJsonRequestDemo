@@ -13,5 +13,7 @@ namespace ConsoleApp.Models
 				return new TechProductOrderItem(upItem);
 			}
 		}
+		
 	}
+	
 }

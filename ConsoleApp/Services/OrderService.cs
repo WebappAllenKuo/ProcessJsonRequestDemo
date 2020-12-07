@@ -17,4 +17,19 @@ namespace ConsoleApp.Services
 			return adapter.GetOrders();
 		}
 	}
+
+	public class TypedOrderService
+	{
+		private readonly ITypedOrderAdapter adapter;
+
+		public TypedOrderService(ITypedOrderAdapter adapter)
+		{
+			this.adapter = adapter;
+		}
+
+		public TypedOrder[] ProcessOrders()
+		{
+			return adapter.GetOrders();
+		}
+	}
 }

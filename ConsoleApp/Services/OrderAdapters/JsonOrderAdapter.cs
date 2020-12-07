@@ -5,7 +5,7 @@ using ConsoleApp.UpStreamModels;
 
 namespace ConsoleApp.Services.OrderAdapters
 {
-	internal class JsonOrderAdapter : IOrderAdapter
+	public class JsonOrderAdapter : IOrderAdapter
 	{
 		private FacadeUpStreamOrder facade;
 
@@ -20,6 +20,25 @@ namespace ConsoleApp.Services.OrderAdapters
 			{
 				Code = upOrder.Code, 
 				Items = upOrder.Items.Select(upItem=>OrderItemFactory.GetObject(upItem)).ToArray()
+			}).ToArray();
+		}
+	}
+
+	public class JsonTypedOrderAdapter : ITypedOrderAdapter
+	{
+		private FacadeUpStreamTypedOrder facade;
+
+		public JsonTypedOrderAdapter(FacadeUpStreamTypedOrder facade)
+		{
+			this.facade = facade;
+		}
+		public TypedOrder[] GetOrders()
+		{
+			UpStreamTypedOrder[] orders = facade.GetOrder();
+			return orders.Select(upOrder => new TypedOrder
+			{
+				Code = upOrder.Code,
+				Items = upOrder.Items.Select(upItem => new TypedOrderItem{TypeName = upItem.TypeName, ProductName = upItem.ProductName}).ToArray()
 			}).ToArray();
 		}
 	}

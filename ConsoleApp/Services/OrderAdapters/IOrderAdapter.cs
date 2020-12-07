@@ -6,4 +6,9 @@ namespace ConsoleApp.Services.OrderAdapters
 	{
 		Order[] GetOrders();
 	}
+
+	public interface ITypedOrderAdapter
+	{
+		TypedOrder[] GetOrders();
+	}
 }
