@@ -46,14 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FacadeUpStreamOrder.cs" />
+    <Compile Include="UpStreamModels\FacadeUpStreamOrder.cs" />
     <Compile Include="Models\FruitOrderItem.cs" />
-    <Compile Include="IOrderAdapter.cs" />
-    <Compile Include="JsonOrderAdapter.cs" />
+    <Compile Include="Services\OrderAdapters\IOrderAdapter.cs" />
+    <Compile Include="Services\OrderAdapters\JsonOrderAdapter.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\OrderItemFactory.cs" />
-    <Compile Include="OrderService.cs" />
+    <Compile Include="Services\OrderService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\TechProductOrderItem.cs" />

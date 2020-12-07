@@ -1,6 +1,6 @@
 ﻿using ConsoleApp.UpStreamModels;
 
-namespace ConsoleApp
+namespace ConsoleApp.Models
 {
 	public class FruitOrderItem:OrderItem{
 		public FruitOrderItem(UpStreamOrderItem upItem)

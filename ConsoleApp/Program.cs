@@ -5,6 +5,10 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp.Models;
+using ConsoleApp.Services;
+using ConsoleApp.Services.OrderAdapters;
+using ConsoleApp.UpStreamModels;
 
 namespace ConsoleApp
 {
